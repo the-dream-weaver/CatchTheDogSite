@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch That Dog</title>
+    <meta
+      name="description"
+      content="A silly browser game where the dog keeps dodging your cursor."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Tiny web game</p>
+        <h1>Catch That Dog</h1>
+        <p class="hero-copy">
+          Move your mouse toward the dog. It notices. It panics. It relocates.
+          Your job is to click it anyway.
+        </p>
+        <div class="hero-stats" aria-label="Game stats">
+          <article class="stat-card">
+            <span class="stat-label">Caught</span>
+            <strong class="stat-value" id="score">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Dodges</span>
+            <strong class="stat-value" id="dodges">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Mood</span>
+            <strong class="stat-value stat-message" id="status">
+              Suspicious
+            </strong>
+          </article>
+        </div>
+      </header>
+
+      <main class="game-panel">
+        <section class="arena-wrap">
+          <div class="arena-intro">
+            <h2>Game Arena</h2>
+            <p>
+              Sneak in from an angle. Fast, sloppy lunges only make it worse.
+            </p>
+          </div>
+
+          <div
+            class="arena"
+            id="arena"
+            aria-label="Dog chasing game area"
+            role="application"
+          >
+            <div class="arena-grid" aria-hidden="true"></div>
+            <button
+              class="dog"
+              id="dog"
+              type="button"
+              aria-label="Catch the dog"
+            >
+              <span class="dog-shadow" aria-hidden="true"></span>
+              <span class="dog-face" aria-hidden="true"></span>
+            </button>
+
+            <div class="burst-layer" id="burstLayer" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <aside class="tips-panel">
+          <h2>How To Win</h2>
+          <ul class="tips-list">
+            <li>Move slowly and stop overreacting.</li>
+            <li>Try cornering it instead of charging straight in.</li>
+            <li>After a lot of dodges, it gets briefly overconfident.</li>
+          </ul>
+
+          <button class="reset-button" id="resetButton" type="button">
+            Reset Score
+          </button>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
