@@ -230,7 +230,7 @@ h1 {
 }
 
 .dog-shadow,
-.dog-face {
+.dog-image {
   position: absolute;
   inset: 0;
   display: block;
@@ -241,42 +241,11 @@ h1 {
   background: radial-gradient(circle, rgba(23, 36, 58, 0.18), transparent 62%);
 }
 
-.dog-face {
-  border-radius: 40% 40% 44% 44%;
-  background:
-    radial-gradient(circle at 35% 40%, #fff 0 6px, transparent 7px),
-    radial-gradient(circle at 65% 40%, #fff 0 6px, transparent 7px),
-    radial-gradient(circle at 35% 41%, #17243a 0 2px, transparent 3px),
-    radial-gradient(circle at 65% 41%, #17243a 0 2px, transparent 3px),
-    radial-gradient(circle at 50% 58%, #17243a 0 6px, transparent 7px),
-    radial-gradient(circle at 44% 68%, #b93f16 0 3px, transparent 4px),
-    radial-gradient(circle at 56% 68%, #b93f16 0 3px, transparent 4px),
-    linear-gradient(180deg, #ffe4b5 0%, #f2b672 100%);
-  border: 4px solid rgba(23, 36, 58, 0.08);
-  box-shadow:
-    inset 0 -10px 0 rgba(185, 63, 22, 0.1),
-    0 14px 26px rgba(23, 36, 58, 0.16);
-}
-
-.dog-face::before,
-.dog-face::after {
-  content: "";
-  position: absolute;
-  width: 28px;
-  height: 38px;
-  top: 4px;
-  border-radius: 55% 55% 38% 38%;
-  background: linear-gradient(180deg, #b5673d 0%, #88431f 100%);
-}
-
-.dog-face::before {
-  left: 8px;
-  transform: rotate(-26deg);
-}
-
-.dog-face::after {
-  right: 8px;
-  transform: rotate(26deg);
+.dog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 26px rgba(23, 36, 58, 0.16));
 }
 
 .dog.resting {
